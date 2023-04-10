@@ -18,7 +18,7 @@ public class StepThree {
             System.out.println("This number " + number + " is not that good as a previous one");
         } else {
             System.out.println("You've entered " + number);
-        } */
+        }
 
                 Scanner scanner = new Scanner(System.in);
 
@@ -31,7 +31,19 @@ public class StepThree {
                     System.out.println(num + " is odd.");
                 }
 
-                scanner.close();
+                scanner.close(); */
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a float value: ");
+        float num = scanner.nextFloat();
+
+        if ((num % 2 == 0 && num > 10) || num == 15) {
+            System.out.println("The value satisfies the conditions.");
+        } else {
+            System.out.println("The value does not satisfy the conditions.");
+        }
+
+        scanner.close();
 
     }
 
