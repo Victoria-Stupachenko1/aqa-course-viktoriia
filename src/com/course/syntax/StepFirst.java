@@ -16,22 +16,6 @@ public class StepFirst {
      //   System.out.println("StepFirst.main");
      //   System.out.println(a + ", " + b + ", " + c +", " + d + ", " + e + ", " + f +", " + letter + ", " + result);
 
-            System.out.print("Введите любое целое число от 1 до 10: ");
-            Scanner scan = new Scanner(System.in);
-            int number = scan.nextInt();
-
-            if (number >= 10) {
-                System.out.println("Your number " + number + " is invalid");
-            }
-            if (number <= 10 && number > 0) {
-                System.out.println("This number " + number + " is better");
-            }
-            if (number == 0) {
-                System.out.println("This number " + number + " is not that good as a previous one");
-            } else {
-                System.out.println("You've entered " + number);
-            }
-
         }
     }
 
