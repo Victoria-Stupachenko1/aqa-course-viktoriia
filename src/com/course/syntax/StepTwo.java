@@ -11,7 +11,7 @@ public class StepTwo {
 
         double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
 
-        System.out.println(S);
+        System.out.println(s);
 
 }
 }
