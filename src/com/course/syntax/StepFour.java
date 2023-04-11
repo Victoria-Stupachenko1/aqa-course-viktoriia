@@ -4,15 +4,20 @@ import java.util.Scanner;
 
 public class StepFour {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int age = 0;
-        while (age <= 0 || age >= 140) {
-            System.out.print("Enter your age: ");
-            age = scanner.nextInt();
-            if (age <= 0 || age >= 140) {
-                System.out.println("Invalid age. Please enter a value between 1 and 140.");
+        for (int i = -1; i <= 100; i++) {
+            System.out.println(i);
+            if (i < 0) {
+                System.out.println("Error: the number must be positive.");
             }
+            if (i % 2 == 0) {
+                System.out.print("The number is even ");
+            }
+                if (i % 3 == 0) {
+                    System.out.println("The number is multiple to 3");
+                } else {
+                    System.out.println(i);
+                }
+            }   System.out.println();
         }
-        System.out.println("Success! Your age is " + age);
     }
-}
+
