@@ -2,7 +2,6 @@ package com.course.syntax;
 
 public class StepTwo {
     public static void main(String[] args) {
- variables
         int a = 14;
         int b = 12;
         int c = 12;
@@ -24,7 +23,7 @@ public class StepTwo {
         int g = 2 * c--;
         int h = 2 * --d;
 
-        System.out.println("Постфиксная форма инкремента " + e);
+         ("Постфиксная форма инкремента " + e);
         System.out.println(a);
         System.out.println("Префиксная форма инкремента " + f);
         System.out.println(b);
@@ -36,7 +35,5 @@ public class StepTwo {
 
 
     }
-
- main
 }
 
