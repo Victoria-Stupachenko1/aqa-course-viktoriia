@@ -2,6 +2,18 @@ package com.course.syntax;
 
 public class StepTwo {
     public static void main(String[] args) {
+ variables
+        int a = 14;
+        int b = 12;
+        int c = 12;
+        int p = (a + b + c)/2;
+
+        double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+
+        System.out.println(s);
+
+}
+
         int a = 2;
         int b = 3;
         int c = 4;
@@ -25,5 +37,6 @@ public class StepTwo {
 
     }
 
+ main
 }
 
