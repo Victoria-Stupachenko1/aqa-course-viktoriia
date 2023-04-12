@@ -11,4 +11,3 @@ public class StepFive1 {
         System.out.println("Average length of my array is " + average);
     }
 }
-
