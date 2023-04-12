@@ -31,7 +31,7 @@ public class StepThree {
                     System.out.println(num + " is odd.");
                 }
 
-                scanner.close(); */
+                scanner.close();
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a float value: ");
@@ -47,4 +47,4 @@ public class StepThree {
 
     }
 
-    }
+    }*/
