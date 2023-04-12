@@ -11,10 +11,9 @@ public class StepTwo {
 
         System.out.println(s);
 
-}
-    int a = 2;
-    int b = 3;
-    int c = 4;
+    int a1 = 2;
+    int b1 = 3;
+    int c1 = 4;
     int d = 6;
 
     int e = 2 * a++;
@@ -22,12 +21,12 @@ public class StepTwo {
     int g = 2 * c--;
     int h = 2 * --d;
 
-
-        System.out.println(a);("Постфиксная форма инкремента " + e);
+        System.out.println("Постфиксная форма инкремента " + e);
+        System.out.println(a1);
         System.out.println("Префиксная форма инкремента " + f);
-        System.out.println(b);
+        System.out.println(b1);
         System.out.println("Постфиксная форма декремента " + g);
-        System.out.println(c);
+        System.out.println(c1);
         System.out.println("Префиксная форма декремента " + h);
         System.out.println(d);
 
