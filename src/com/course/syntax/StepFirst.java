@@ -2,7 +2,7 @@ package com.course.syntax;
 
 import java.util.Scanner;
 
-/*public class StepFirst {
+public class StepFirst {
     public static void main(String[] args) {
     //    byte a = 1;
     //    short b = 20346;
@@ -17,5 +17,5 @@ import java.util.Scanner;
      //   System.out.println(a + ", " + b + ", " + c +", " + d + ", " + e + ", " + f +", " + letter + ", " + result);
 
         }
-    } */
+    }
 
