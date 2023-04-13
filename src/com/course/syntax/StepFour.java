@@ -14,8 +14,6 @@ public class StepFour {
             }
         }
         System.out.println("Success! Your age is " + age);
-    }
-}
 
         for (int i = 0; i <= 100; i++) {
             for (int j = 0; j <= 100; j++) {
@@ -32,7 +30,7 @@ public class StepFour {
                 }
             }
         }
-
     }
 }
+
 
