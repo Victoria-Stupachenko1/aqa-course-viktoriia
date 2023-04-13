@@ -32,6 +32,7 @@ public class StepThree {
                 }
 
                 scanner.close();
+
         Scanner scanner1 = new Scanner(System.in);
 
         System.out.print("Enter a float value: ");

@@ -1,7 +1,4 @@
 package com.course.syntax;
 
-public class StepFive1 {
-
+public class StepFive3 {
 }
-
-
