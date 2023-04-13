@@ -4,6 +4,19 @@ import java.util.Scanner;
 public class StepFour {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        int age = 0;
+        while (age <= 0 || age > 140) {
+            System.out.print("Enter your age: ");
+            age = scanner.nextInt();
+            if (age <= 0 || age > 140) {
+                System.out.println("Invalid age. Please enter a value between 1 and 140.");
+            }
+        }
+        System.out.println("Success! Your age is " + age);
+    }
+}
+
         for (int i = 0; i <= 100; i++) {
             for (int j = 0; j <= 100; j++) {
                 System.out.println(i);
@@ -22,5 +35,4 @@ public class StepFour {
 
     }
 }
-
 
