@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StepThree {
     public static void main(String[] args) {
-    /*    System.out.print("Введите любое целое число от 1 до 10: ");
+        System.out.print("Введите любое целое число от 1 до 10: ");
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
 
@@ -31,13 +31,14 @@ public class StepThree {
                     System.out.println(num + " is odd.");
                 }
 
-                scanner.close(); */
-        Scanner scanner = new Scanner(System.in);
+                scanner.close();
+
+        Scanner scanner1 = new Scanner(System.in);
 
         System.out.print("Enter a float value: ");
-        float num = scanner.nextFloat();
+        float num1 = scanner1.nextFloat();
 
-        if ((num % 2 == 0 && num > 10) || num == 15) {
+        if ((num1 % 2 == 0 && num1 > 10) || num1 == 15) {
             System.out.println("The value satisfies the conditions.");
         } else {
             System.out.println("The value does not satisfy the conditions.");
