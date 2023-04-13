@@ -3,7 +3,7 @@ package com.course.syntax;
 import java.util.Scanner;
 
 public class StepFour {
-    public static int findLargestDivisor(int num) {
+        public static int findLargestDivisor(int num) {
         int largestDivisor = num - 1;
         while (largestDivisor > 0) {
             if (num % largestDivisor == 0) {
