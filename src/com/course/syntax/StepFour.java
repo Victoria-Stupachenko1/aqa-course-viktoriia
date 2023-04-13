@@ -1,7 +1,6 @@
 package com.course.syntax;
 
 import java.util.Scanner;
-
 public class StepFour {
     public static void main(String[] args) {
 
@@ -16,3 +15,5 @@ public class StepFour {
         }
     }
 }
+
+
