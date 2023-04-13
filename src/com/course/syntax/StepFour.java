@@ -6,10 +6,10 @@ public class StepFour {
 
         Scanner scanner = new Scanner(System.in);
         int age = 0;
-        while (age <= 0 || age >= 140) {
+        while (age <= 0 || age > 140) {
             System.out.print("Enter your age: ");
             age = scanner.nextInt();
-            if (age <= 0 || age >= 140) {
+            if (age <= 0 || age > 140) {
                 System.out.println("Invalid age. Please enter a value between 1 and 140.");
             }
         }
