@@ -16,9 +16,9 @@ public class StepTwo {
     int c1 = 4;
     int d = 6;
 
-    int e = 2 * a++;
+    int e = 2 * a1++;
     int f = 2 * ++b;
-    int g = 2 * c--;
+    int g = 2 * c1--;
     int h = 2 * --d;
 
         System.out.println("Постфиксная форма инкремента " + e);
@@ -33,7 +33,6 @@ public class StepTwo {
 
 
 }
-
 
 }
 
