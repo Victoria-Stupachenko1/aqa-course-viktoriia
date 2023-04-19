@@ -8,7 +8,12 @@ public class StepSix1 {
         System.out.println("Please, enter the string:");
         String string1 = scanner.nextLine();
 
-        System.out.println(string1.toUpperCase().replaceAll("\\s", "" ));
+        String result = string1.replaceAll("\\s+", "").toUpperCase();
 
+        for (int i = 0; i < result.length(); i++) {
+            System.out.println(result.charAt(i));
+
+
+        }
     }
 }
