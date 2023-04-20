@@ -12,11 +12,12 @@ public class StepSix3 {
 
         int count = 0;
         for (int i = 0; i < sentence.length(); i++) {
-            if (sentence.charAt(i) == letter || sentence.charAt(i) == Character.toUpperCase(letter)) {
+            if (sentence.charAt(i) == letter) {
                 count++;
             }
-            System.out.println("The number of " + letter + " in the console is: " + count);
-            scanner.close();
         }
+
+            System.out.printf("The letter '%c' appears %d times", letter, count);
+
     }
 }
