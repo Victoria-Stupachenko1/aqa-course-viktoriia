@@ -1,3 +1,4 @@
 .idea/
 aqa-course.iml
-.out/
+!out/
+/out/
