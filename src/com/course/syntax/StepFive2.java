@@ -1,5 +1,7 @@
 package com.course.syntax;
 
+import java.util.Arrays;
+
 public class StepFive2 {
     public static void main(String[] args) {
         int [] array1 = {1, 2, 3, 4, 5, 6};
@@ -13,10 +15,10 @@ public class StepFive2 {
         }
         for (int j = 0; j < array2.length; j++) {
             arraySum[count++] = array2[j];
+
         }
-        for (int i = 0; i < arraySum.length; i++) {
-            System.out.println(arraySum[i] + " ");
-        }
+        System.out.println(Arrays.toString(arraySum));
+
 
 
     }
