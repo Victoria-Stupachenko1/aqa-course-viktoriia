@@ -1,4 +1,4 @@
 package com.course.syntax;
 
-public class StepSix3 \{
+public class StepSix3 {
         }
