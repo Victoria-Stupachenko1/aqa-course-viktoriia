@@ -82,5 +82,9 @@ public class Address {
                 + ", building=" + building + ", zipCode=" + zipCode + "]";
     }
 
+    //Both addresses contains the same fields: id; country; city; street; building; room; zip code.
+    // id must be generated, like user id. Address object must be created only with mentioning next required fields values:
+    // country; city; street; building; zip code. All fields must have getters and setters except of setter for id field.
+
 
 }
