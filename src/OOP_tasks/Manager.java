@@ -1,4 +1,6 @@
-package com.course.syntax;
+package OOP_tasks;
+
+import OOP_tasks.User;
 
 public class Manager extends User {
     // Private fields

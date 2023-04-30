@@ -1,4 +1,4 @@
-package com.course.syntax;
+package OOP_tasks;
 
 public class Cards {
     // Private fields

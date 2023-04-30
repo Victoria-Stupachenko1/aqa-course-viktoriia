@@ -1,8 +1,6 @@
-package com.course.syntax;
+package OOP_tasks;
 
-import javax.management.relation.Role;
 import java.util.ArrayList;
-import java.util.List;
 
 public class User {
     private static int nextId = 1;

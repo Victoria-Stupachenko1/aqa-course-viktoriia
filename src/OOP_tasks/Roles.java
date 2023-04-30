@@ -1,4 +1,4 @@
-package com.course.syntax;
+package OOP_tasks;
 
 import javax.management.relation.Role;
 
@@ -59,5 +59,12 @@ public class Roles {
     public String toString() {
         return "Role [role=" + role + "]";
     }
+
+    // There are 4 types of roles: Admin, Main Customer, Customer and Viewer.
+    // One from this values must be added in process of creation of user.
+    //role field is an object that contains next private fields: viewAll; editAll; addAll; deleteAll.
+    // All this values must be added in process of creation Role object and never changed again.
+    //Admin - all true; viewer - only first true; customer - viewAll=true, addAll=true; main customer - viewAll=true,
+    // addAll=true, editAll=true. Role object must be generated in process of creation a user depend on role type, mentioned before.
 }
 
