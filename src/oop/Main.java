@@ -1,4 +1,4 @@
-package OOP_tasks;
+package oop;
 
 import java.util.ArrayList;
 
@@ -8,9 +8,10 @@ public class Main {
         user.setPhoneNumber ("+12345678");
         Address billingAddress = new Address ("Great Britain", "London", "Glasgow St.", "1A", "02104");
         user.setBillingAddress (billingAddress);
+
         user.addCard ("4142567898764567", "02/24", "123", "VISA");
         user.addCard ("41425678723764567", "02/28", "123", "MASTERCard");
-        ArrayList<Cards> cards = user.getCards ();
+        ArrayList<Cards> cards = user.getCards ( );
 
         System.out.println (cards);
 
@@ -25,7 +26,7 @@ public class Main {
 
         user.printUserInfo ( );
         user2.printUserInfo ( );
-        manager.printUserInfo ();
+        manager.printUserInfo ( );
 
     }
 

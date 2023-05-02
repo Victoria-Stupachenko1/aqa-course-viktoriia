@@ -1,9 +1,10 @@
-package OOP_tasks;
+package oop;
+
+import java.util.ArrayList;
 
 public class Cards {
     // Private fields
-    private static int nextId = 1;
-    private int id;
+    private static int id;
     private String number;
     private String expireDate;
     private String cvv;
@@ -11,16 +12,15 @@ public class Cards {
 
     // Constructor
     public Cards(String number, String expireDate, String cvv, String cardType) {
-        this.id = nextId;
         this.number = number;
         this.expireDate = expireDate;
         this.cvv = cvv;
-        if (cardType.equalsIgnoreCase("Visa") || cardType.equalsIgnoreCase("MasterCard")) {
+        if (cardType.equalsIgnoreCase ("Visa") || cardType.equalsIgnoreCase ("MasterCard")) {
             this.cardType = cardType;
         } else {
             throw new IllegalArgumentException ("Card type must be Visa or MasterCard");
         }
-        nextId++;
+        id++;
     }
 
     //Getters & Setters
@@ -35,24 +35,31 @@ public class Cards {
     public String getNumber() {
         return number;
     }
+
     public void setExpireDate(String expireDate) {
         this.expireDate = expireDate;
     }
+
     public String getExpireDate() {
         return expireDate;
     }
+
     public void setCvv(String cvv) {
         this.cvv = cvv;
     }
+
     public String getCvv() {
         return cvv;
     }
+
     public void setCardType(String cardType) {
         this.cardType = cardType;
     }
+
     public String getCardType() {
         return cardType;
     }
+
     @Override
     public String toString() {
         return "Card{" +

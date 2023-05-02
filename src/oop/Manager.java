@@ -1,6 +1,4 @@
-package OOP_tasks;
-
-import OOP_tasks.User;
+package oop;
 
 public class Manager extends User {
     // Private fields
@@ -8,14 +6,15 @@ public class Manager extends User {
     private String responsibilityDistrict;
     private String workPhoneNumber;
 
-   // Constructor
+    // Constructor
     public Manager(String fullName, String email, String role, String position) {
         super (fullName, email, role);
         this.position = position;
     }
+
     // Method
     public void printUserInfo() {
-        super.printUserInfo();
+        super.printUserInfo ( );
         System.out.println (position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
     }
 
@@ -23,17 +22,24 @@ public class Manager extends User {
     public void setPosition(String position) {
         this.position = position;
     }
+
     public String getPosition() {
         return position;
     }
+
     public void setResponsibilityDistrict(String responsibilityDistrict) {
         this.responsibilityDistrict = responsibilityDistrict;
     }
+
     public String getResponsibilityDistrict() {
         return responsibilityDistrict;
     }
+
     public void setWorkPhoneNumber(String workPhoneNumber) {
         this.workPhoneNumber = workPhoneNumber;
+    }
+    public String getWorkPhoneNumber() {
+        return getPhoneNumber ();
     }
 
     @Override

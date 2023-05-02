@@ -1,43 +1,44 @@
-package OOP_tasks;
+package oop;
 
 import java.util.ArrayList;
 
 public class User {
-    private static int nextId = 1;
     // Private fields
-    private int id;
+    private static int id;
     private String firstName;
     private String lastName;
     private String fullName;
     private String email;
-    private String phoneNumber;
-    private Address billingAddress;
-    private Address deliveryAddress;
-    private ArrayList<Cards> cards;
+    private String phoneNumber; // s
+    private Address billingAddress; //s
+    private Address deliveryAddress; //s
+    private ArrayList<Cards> cards;  //s
     private Roles role;
-    private String manager;
+    private Manager manager; // s
 
     // Constructors
     public User(String fullName, String email, String role) {
-        this.id = nextId;
         this.fullName = fullName;
+        this.firstName = fullName.split (" ")[0];
+        this.lastName = fullName.split (" ")[1];
         this.email = email;
         this.role = new Roles (role);
-        this.cards = new ArrayList<Cards>();
-        nextId++;
+      //  this.cards = new ArrayList<Cards>();
+        id++;
     }
 
     public User(String firstName, String lastName, String email, String role) {
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.role = new Roles (role);
-        nextId++;
+        id++;
     }
+
     public void printUserInfo() {
         System.out.println (fullName + ", " + email + ", " + ", " + phoneNumber + ", " + billingAddress + ", " + deliveryAddress + ", " + role);
     }
+
 
     // Getters & Setters
     public void setId(int Id) {
@@ -67,15 +68,6 @@ public class User {
     public void addCard(String number, String expireDate, String cvv, String cardType) {
         Cards cards = new Cards (number, expireDate, cvv, cardType);
         this.cards.add (cards);
-    }
-
-    public void setManager(String manager) {
-        this.manager = manager;
-    }
-
-
-    private void updateFullName() {
-        fullName = firstName + " " + lastName;
     }
 
     public String getFullName() {
@@ -110,10 +102,6 @@ public class User {
         return deliveryAddress;
     }
 
-    public String getManager() {
-        return manager;
-    }
-
     public ArrayList<Cards> getCards() {
         return cards;
     }
@@ -136,7 +124,6 @@ public class User {
                 + ", Delivery Address = " + deliveryAddress
                 + ", Cards = " + cards
                 + ", Role = " + role
-                + ", Manager = " + manager
                 + '}';
     }
 

@@ -1,6 +1,4 @@
-package OOP_tasks;
-
-import javax.management.relation.Role;
+package oop;
 
 public class Roles {
     // private fields
@@ -52,9 +50,11 @@ public class Roles {
     public String getRole() {
         return role;
     }
+
     public void setRole(String role) {
         this.role = role;
     }
+
     @Override
     public String toString() {
         return "Role [role=" + role + "]";

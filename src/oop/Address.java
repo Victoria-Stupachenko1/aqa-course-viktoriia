@@ -1,9 +1,8 @@
-package OOP_tasks;
+package oop;
 
 public class Address {
     // Private fields
-    private static int nextId = 1;
-    private int id;
+    private static int id;
     private String country;
     private String city;
     private String street;
@@ -14,13 +13,12 @@ public class Address {
     // Constructor
 
     public Address(String country, String city, String street, String building, String zipCode) {
-        this.id = nextId;
         this.country = country;
         this.city = city;
         this.street = street;
         this.building = building;
         this.zipCode = zipCode;
-        nextId++;
+        id++;
     }
     // getters & setters
 

@@ -1,4 +1,4 @@
-package com.course.syntax;
+package syntax;
 
 import java.util.Scanner;
 
