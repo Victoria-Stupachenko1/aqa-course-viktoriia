@@ -1,6 +1,4 @@
-package OOP_tasks;
-
-import OOP_tasks.User;
+package oop;
 
 public class Manager extends User {
     // Private fields

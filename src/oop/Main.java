@@ -1,4 +1,4 @@
-package OOP_tasks;
+package oop;
 
 import java.util.ArrayList;
 

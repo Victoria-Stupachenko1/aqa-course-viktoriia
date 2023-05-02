@@ -1,6 +1,4 @@
-package OOP_tasks;
-
-import javax.management.relation.Role;
+package oop;
 
 public class Roles {
     // private fields

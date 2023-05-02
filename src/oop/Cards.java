@@ -1,4 +1,4 @@
-package OOP_tasks;
+package oop;
 
 public class Cards {
     // Private fields
