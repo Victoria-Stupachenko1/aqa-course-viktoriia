@@ -23,7 +23,6 @@ public class User {
         this.lastName = fullName.split (" ")[1];
         this.email = email;
         this.role = new Roles (role);
-      //  this.cards = new ArrayList<Cards>();
         id++;
     }
 
