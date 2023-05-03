@@ -24,8 +24,11 @@ public class Main {
         Address billingAddress1 = new Address ("Ukraine", "Kyiv", "Khreschatyk", "1", "09154");
         user2.setBillingAddress (billingAddress1);
 
+        User user3 = new User ("Test", "Test", "r@k.com", "Customer");
+
         user.printUserInfo ( );
         user2.printUserInfo ( );
+        user3.printUserInfo ();
         manager.printUserInfo ( );
 
     }

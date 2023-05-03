@@ -29,6 +29,7 @@ public class User {
     public User(String firstName, String lastName, String email, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.fullName = firstName + " " + lastName;
         this.email = email;
         this.role = new Roles (role);
         id++;
@@ -40,9 +41,6 @@ public class User {
 
 
     // Getters & Setters
-    public void setId(int Id) {
-        this.id = id;
-    }
 
     public int getId() {
         return id;
@@ -107,6 +105,14 @@ public class User {
 
     public void setCards(ArrayList<Cards> cards) {
         this.cards = cards;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
     }
 
     // toString
