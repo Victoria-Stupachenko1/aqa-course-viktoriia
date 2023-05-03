@@ -40,7 +40,7 @@ public class Manager extends User {
     }
 
     public String getWorkPhoneNumber() {
-        return getPhoneNumber ( );
+        return workPhoneNumber;
     }
 
     @Override
