@@ -38,8 +38,9 @@ public class Manager extends User {
     public void setWorkPhoneNumber(String workPhoneNumber) {
         this.workPhoneNumber = workPhoneNumber;
     }
+
     public String getWorkPhoneNumber() {
-        return getPhoneNumber ();
+        return getPhoneNumber ( );
     }
 
     @Override

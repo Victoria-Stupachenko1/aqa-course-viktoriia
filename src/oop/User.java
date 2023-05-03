@@ -12,7 +12,7 @@ public class User {
     private String phoneNumber; // s
     private Address billingAddress; //s
     private Address deliveryAddress; //s
-    private ArrayList<Cards> cards = new ArrayList<>();  //s
+    private ArrayList<Cards> cards = new ArrayList<> ( );  //s
     private Roles role;
     private Manager manager; // s
 
