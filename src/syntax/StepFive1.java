@@ -1,4 +1,4 @@
-package com.course.syntax;
+package syntax;
 
 public class StepFive1 {
     public static void main(String[] args) {
