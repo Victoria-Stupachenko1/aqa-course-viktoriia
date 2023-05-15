@@ -1,6 +1,6 @@
 package oop;
 
-import java.util.ArrayList;
+import exceptions.CardTypeExceptions;
 
 public class Cards {
     // Private fields
@@ -8,19 +8,31 @@ public class Cards {
     private String number;
     private String expireDate;
     private String cvv;
-    private String cardType;
+    private CardType cardType;
 
-    // Constructor
-    public Cards(String number, String expireDate, String cvv, String cardType) {
+
+    // 1. Interfaces. Enum Task 1
+    public enum CardType {
+        VISA,
+        MASTERCARD;
+    }
+
+    // 1. Exceptions // 1. Interfaces. Enum Task 1  // Constructor
+    public Cards(String number, String expireDate, String cvv, CardType cardType) throws CardTypeExceptions {
         this.number = number;
         this.expireDate = expireDate;
         this.cvv = cvv;
-        if (cardType.equalsIgnoreCase ("Visa") || cardType.equalsIgnoreCase ("MasterCard")) {
-            this.cardType = cardType;
-        } else {
-            throw new IllegalArgumentException ("Card type must be Visa or MasterCard");
-        }
+        setCardType (CardType.valueOf (String.valueOf (cardType)));
         id++;
+    }
+
+    // 1. Interfaces. Enum Task 1
+    public void setCardType(CardType cardType) throws CardTypeExceptions {
+        try {
+            this.cardType = CardType.valueOf (String.valueOf (cardType));
+        } catch (IllegalArgumentException e) {
+            throw new CardTypeExceptions ("Card type must be Visa or MasterCard");
+        }
     }
 
     //Getters & Setters
@@ -52,23 +64,17 @@ public class Cards {
         return cvv;
     }
 
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
-    }
+    //  public void setCardType(CardType cardType) {
+    //      this.cardType = cardType;
+    //  }
 
-    public String getCardType() {
-        return cardType;
+    public CardType getCardType() {
+        return CardType.valueOf (String.valueOf (cardType));
     }
 
     @Override
     public String toString() {
-        return "Card{" +
-                "id='" + id + '\'' +
-                ", number='" + number + '\'' +
-                ", expireDate=" + expireDate +
-                ", cvv=" + cvv +
-                ", cardType=" + cardType +
-                '}';
+        return "Card{" + "id='" + id + '\'' + ", number='" + number + '\'' + ", expireDate=" + expireDate + ", cvv=" + cvv + ", cardType=" + cardType + '}';
     }
 
     //cards field is an ArrayList of objects, that contains next private fields: id; number; expireDate; cvv;

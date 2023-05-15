@@ -1,22 +1,25 @@
 package oop;
 
-public class Manager extends User {
+import interfaces.PrintInfo;
+import oop.Roles.RoleType;
+
+public class Manager extends User implements PrintInfo {
     // Private fields
     private String position;
     private String responsibilityDistrict;
     private String workPhoneNumber;
 
     // Constructor
-    public Manager(String fullName, String email, String role, String position) {
+    public Manager(String fullName, String email, Roles.RoleType role, String position) {
         super (fullName, email, role);
         this.position = position;
     }
 
     // Method
-    public void printUserInfo() {
-        super.printUserInfo ( );
-        System.out.println (position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
-    }
+ //   public void printUserInfo() {
+  //      super.printUserInfo ( );
+
+ //   }
 
     // Getters & Setters
     public void setPosition(String position) {
@@ -47,6 +50,11 @@ public class Manager extends User {
     public String toString() {
         return "Manager [position=" + position + ", Responsibility District=" + responsibilityDistrict
                 + ", Work Phone Number =" + workPhoneNumber + "]";
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println (position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
     }
 
 
