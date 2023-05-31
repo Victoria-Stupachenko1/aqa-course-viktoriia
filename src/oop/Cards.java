@@ -14,24 +14,29 @@ public class Cards {
     // 1. Interfaces. Enum Task 1
     public enum CardType {
         VISA,
-        MASTERCARD;
+        MASTERCARD
     }
 
     // 1. Exceptions // 1. Interfaces. Enum Task 1  // Constructor
-    public Cards(String number, String expireDate, String cvv, CardType cardType) throws CardTypeExceptions {
-        this.number = number;
-        this.expireDate = expireDate;
-        this.cvv = cvv;
-        setCardType (CardType.valueOf (String.valueOf (cardType)));
-        id++;
+    public Cards(String number, String expireDate, String cvv, CardType cardType) {
+        try {
+            this.number = number;
+            this.expireDate = expireDate;
+            this.cvv = cvv;
+            setCardType(CardType.valueOf(String.valueOf(cardType)));
+            id++;
+        } catch (CardTypeExceptions e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     // 1. Interfaces. Enum Task 1
     public void setCardType(CardType cardType) throws CardTypeExceptions {
         try {
-            this.cardType = CardType.valueOf (String.valueOf (cardType));
+            this.cardType = CardType.valueOf(String.valueOf(cardType));
         } catch (IllegalArgumentException e) {
-            throw new CardTypeExceptions ("Card type must be Visa or MasterCard");
+            throw new CardTypeExceptions("Card type must be Visa or MasterCard");
         }
     }
 
@@ -64,12 +69,8 @@ public class Cards {
         return cvv;
     }
 
-    //  public void setCardType(CardType cardType) {
-    //      this.cardType = cardType;
-    //  }
-
     public CardType getCardType() {
-        return CardType.valueOf (String.valueOf (cardType));
+        return CardType.valueOf(String.valueOf(cardType));
     }
 
     @Override

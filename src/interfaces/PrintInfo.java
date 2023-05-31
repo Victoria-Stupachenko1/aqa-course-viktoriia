@@ -4,6 +4,4 @@ package interfaces;
 public interface PrintInfo {
 
     public void printInfo();
-
-    String userData();
 }

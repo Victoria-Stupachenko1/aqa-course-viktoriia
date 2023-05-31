@@ -54,7 +54,7 @@ public class Manager extends User implements PrintInfo {
 
     @Override
     public void printInfo() {
-        System.out.println (position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
+        System.out.println(position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
     }
 
 
