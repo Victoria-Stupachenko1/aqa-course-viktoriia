@@ -6,10 +6,8 @@ import exceptions.CardTypeExceptions;
 import exceptions.PhoneNumberValidation;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
-    static Scanner scanner;
 
     public static void main(String[] args) throws CardTypeExceptions, PhoneNumberValidation {
         User user = new User("John Doe", "johnDoe@gmail.com", Roles.RoleType.ADMIN);
@@ -17,9 +15,9 @@ public class Main {
         Address billingAddress = new Address("Great Britain", "London", "Glasgow St.", "1A", "02104");
         user.setBillingAddress(billingAddress);
 
-        user.addCard("4142567898764567", "02/24", "123", Cards.CardType.valueOf("VISA"));
-        user.addCard("41425678723764567", "02/28", "123", Cards.CardType.valueOf("MASTERCARD"));
-        ArrayList<Cards> cards = user.getCards();
+        user.addCard("4142567898764567", "02/24", "123", Card.CardType.VISA);
+        user.addCard("41425678723764567", "02/28", "123", Card.CardType.MASTERCARD);
+        ArrayList<Card> cards = user.getCards();
 
         System.out.println(cards);
 

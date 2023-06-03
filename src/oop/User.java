@@ -1,6 +1,7 @@
 package oop;
 
 import exceptions.CardTypeExceptions;
+import exceptions.PhoneNumberValidation;
 import interfaces.PrintInfo;
 
 import java.io.FileNotFoundException;
@@ -23,7 +24,7 @@ public class User implements PrintInfo {
     private String phoneNumber; // s
     private Address billingAddress; //s
     private Address deliveryAddress; //s
-    private ArrayList<Cards> cards = new ArrayList<>();  //s
+    private ArrayList<Card> cards = new ArrayList<>();  //s
     private Roles role;
     private Manager manager; // s
     private List<User> userList = new ArrayList<>();
@@ -66,14 +67,13 @@ public class User implements PrintInfo {
 
     // Step 1. Exceptions Task 1 and Task 2
     public void setPhoneNumber(String phoneNumber) {
+        if (!phoneNumber.startsWith("+"))
         try {
-            if (!phoneNumber.startsWith("+")) {
-                throw new IllegalArgumentException("Phone number must start with '+'");
-            }
-            this.phoneNumber = phoneNumber;
-            System.out.println("Phone number set successfully: " + phoneNumber);
-        } catch (IllegalArgumentException e) {
+                throw new PhoneNumberValidation("Phone number must start with '+'");
+        } catch (PhoneNumberValidation e) {
             e.printStackTrace();
+        } else {
+            this.phoneNumber = phoneNumber;
         }
     }
 
@@ -85,8 +85,8 @@ public class User implements PrintInfo {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public void addCard(String number, String expireDate, String cvv, Cards.CardType cardType) throws CardTypeExceptions {
-        Cards card = new Cards(number, expireDate, cvv, cardType);
+    public void addCard(String number, String expireDate, String cvv, Card.CardType cardType) throws CardTypeExceptions {
+        Card card = new Card(number, expireDate, cvv, cardType);
         cards.add(card);
     }
 
@@ -122,11 +122,11 @@ public class User implements PrintInfo {
         return deliveryAddress;
     }
 
-    public ArrayList<Cards> getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void setCards(ArrayList<Cards> cards) {
+    public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
 

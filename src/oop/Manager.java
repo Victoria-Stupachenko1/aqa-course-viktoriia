@@ -1,9 +1,6 @@
 package oop;
 
-import interfaces.PrintInfo;
-import oop.Roles.RoleType;
-
-public class Manager extends User implements PrintInfo {
+public class Manager extends User {
     // Private fields
     private String position;
     private String responsibilityDistrict;
@@ -11,15 +8,9 @@ public class Manager extends User implements PrintInfo {
 
     // Constructor
     public Manager(String fullName, String email, Roles.RoleType role, String position) {
-        super (fullName, email, role);
+        super(fullName, email, role);
         this.position = position;
     }
-
-    // Method
- //   public void printUserInfo() {
-  //      super.printUserInfo ( );
-
- //   }
 
     // Getters & Setters
     public void setPosition(String position) {
@@ -54,11 +45,12 @@ public class Manager extends User implements PrintInfo {
 
     @Override
     public void printInfo() {
+        super.printInfo();
         System.out.println(position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
     }
 
 
-    //manager is an user that contains additional private fields: position; responsibilityDistrict; workPhoneNumber.
+    //manager is a user that contains additional private fields: position; responsibilityDistrict; workPhoneNumber.
     // Manager object can be created, like user object, but additionally must have position value in process of creation.
     // All additional fields must have getters and setters. Also, manager has the same method printUserInfo,
     // like a user, but this method additionally print all additional fields of manager.
