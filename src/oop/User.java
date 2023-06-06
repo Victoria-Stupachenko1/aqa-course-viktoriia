@@ -1,6 +1,5 @@
 package oop;
 
-import exceptions.CardTypeExceptions;
 import exceptions.PhoneNumberValidation;
 import interfaces.PrintInfo;
 
@@ -85,7 +84,7 @@ public class User implements PrintInfo {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public void addCard(String number, String expireDate, String cvv, Card.CardType cardType) throws CardTypeExceptions {
+    public void addCard(String number, String expireDate, String cvv, Card.CardType cardType) {
         Card card = new Card(number, expireDate, cvv, cardType);
         cards.add(card);
     }

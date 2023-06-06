@@ -1,7 +1,5 @@
 package oop;
 
-import exceptions.CardTypeExceptions;
-
 import static java.lang.String.valueOf;
 
 public class Roles {

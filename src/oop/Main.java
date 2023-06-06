@@ -2,14 +2,13 @@ package oop;
 
 import java.additional.syntax.Child;
 
-import exceptions.CardTypeExceptions;
 import exceptions.PhoneNumberValidation;
 
 import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws CardTypeExceptions, PhoneNumberValidation {
+    public static void main(String[] args) {
         User user = new User("John Doe", "johnDoe@gmail.com", Roles.RoleType.ADMIN);
         user.setPhoneNumber("+12345678");
         Address billingAddress = new Address("Great Britain", "London", "Glasgow St.", "1A", "02104");

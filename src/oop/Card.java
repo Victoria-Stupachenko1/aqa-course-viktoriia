@@ -1,7 +1,5 @@
 package oop;
 
-import exceptions.CardTypeExceptions;
-
 public class Card {
     // Private fields
     private static int id;
