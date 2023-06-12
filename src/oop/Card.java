@@ -1,26 +1,33 @@
 package oop;
 
-import java.util.ArrayList;
-
-public class Cards {
+public class Card {
     // Private fields
     private static int id;
     private String number;
     private String expireDate;
     private String cvv;
-    private String cardType;
+    private CardType cardType;
 
-    // Constructor
-    public Cards(String number, String expireDate, String cvv, String cardType) {
-        this.number = number;
-        this.expireDate = expireDate;
-        this.cvv = cvv;
-        if (cardType.equalsIgnoreCase ("Visa") || cardType.equalsIgnoreCase ("MasterCard")) {
-            this.cardType = cardType;
-        } else {
-            throw new IllegalArgumentException ("Card type must be Visa or MasterCard");
+
+    // 1. Interfaces. Enum Task 1
+    public enum CardType {
+        VISA,
+        MASTERCARD
+    }
+
+    // 1. Exceptions // 1. Interfaces. Enum Task 1  // Constructor
+    public Card(String number, String expireDate, String cvv, CardType cardType) {
+            this.number = number;
+            this.expireDate = expireDate;
+            this.cvv = cvv;
+            setCardType(cardType);
+            id++;
         }
-        id++;
+
+
+    // 1. Interfaces. Enum Task 1
+    public void setCardType(CardType cardType) {
+            this.cardType = cardType;
     }
 
     //Getters & Setters
@@ -52,23 +59,13 @@ public class Cards {
         return cvv;
     }
 
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
-    }
-
-    public String getCardType() {
-        return cardType;
+    public CardType getCardType() {
+        return CardType.valueOf(String.valueOf(cardType));
     }
 
     @Override
     public String toString() {
-        return "Card{" +
-                "id='" + id + '\'' +
-                ", number='" + number + '\'' +
-                ", expireDate=" + expireDate +
-                ", cvv=" + cvv +
-                ", cardType=" + cardType +
-                '}';
+        return "Card{" + "id='" + id + '\'' + ", number='" + number + '\'' + ", expireDate=" + expireDate + ", cvv=" + cvv + ", cardType=" + cardType + '}';
     }
 
     //cards field is an ArrayList of objects, that contains next private fields: id; number; expireDate; cvv;

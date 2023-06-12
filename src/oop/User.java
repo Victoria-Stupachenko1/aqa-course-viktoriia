@@ -1,42 +1,60 @@
 package oop;
 
-import java.util.ArrayList;
+import exceptions.PhoneNumberValidation;
+import interfaces.PrintInfo;
 
-public class User {
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class User implements PrintInfo {
     // Private fields
+    private static final String FILE_USERS = "users.csv";
     private static int id;
+    private static Scanner scanner;
     private String firstName;
     private String lastName;
-    private String fullName;
+    private static String fullName;
     private String email;
     private String phoneNumber; // s
     private Address billingAddress; //s
     private Address deliveryAddress; //s
-    private ArrayList<Cards> cards = new ArrayList<> ( );  //s
+    private ArrayList<Card> cards = new ArrayList<>();  //s
     private Roles role;
     private Manager manager; // s
+    private List<User> userList = new ArrayList<>();
 
-    // Constructors
-    public User(String fullName, String email, String role) {
+    // 3. Interfaces & Enums Task 1 //  Constructors
+    public User(String fullName, String email, Roles.RoleType role) {
         this.fullName = fullName;
-        this.firstName = fullName.split (" ")[0];
-        this.lastName = fullName.split (" ")[1];
+        this.firstName = fullName.split(" ")[0];
+        this.lastName = fullName.split(" ")[1];
         this.email = email;
-        this.role = new Roles (role);
+        this.role = new Roles(role);
         id++;
     }
 
-    public User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, Roles.RoleType role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
         this.email = email;
-        this.role = new Roles (role);
-        id++;
+        this.role = new Roles(role);
     }
 
-    public void printUserInfo() {
-        System.out.println (fullName + ", " + email + ", " + ", " + phoneNumber + ", " + billingAddress + ", " + deliveryAddress + ", " + role);
+    public User(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    // 3. Interfaces & Enums Task 3
+    public void printCardsList() {
+        cards.forEach(card -> System.out.println("The list of cards: " + card.getNumber()));
     }
 
 
@@ -46,11 +64,15 @@ public class User {
         return id;
     }
 
+    // Step 1. Exceptions Task 1 and Task 2
     public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.startsWith ("+")) {
-            this.phoneNumber = phoneNumber;
+        if (!phoneNumber.startsWith("+"))
+        try {
+                throw new PhoneNumberValidation("Phone number must start with '+'");
+        } catch (PhoneNumberValidation e) {
+            e.printStackTrace();
         } else {
-            System.out.println ("Error: Phone number should start with '+'");
+            this.phoneNumber = phoneNumber;
         }
     }
 
@@ -62,9 +84,9 @@ public class User {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public void addCard(String number, String expireDate, String cvv, String cardType) {
-        Cards cards = new Cards (number, expireDate, cvv, cardType);
-        this.cards.add (cards);
+    public void addCard(String number, String expireDate, String cvv, Card.CardType cardType) {
+        Card card = new Card(number, expireDate, cvv, cardType);
+        cards.add(card);
     }
 
     public String getFullName() {
@@ -99,11 +121,11 @@ public class User {
         return deliveryAddress;
     }
 
-    public ArrayList<Cards> getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void setCards(ArrayList<Cards> cards) {
+    public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
 
@@ -118,18 +140,52 @@ public class User {
     // toString
     @Override
     public String toString() {
-        return "Person {"
-                + "id='" + id + '\''
-                + ", First Name = " + firstName
-                + ", Last Name = " + lastName
-                + ", Full Name = " + fullName
-                + ", Email = " + email
-                + ", Phone Number = " + phoneNumber
-                + ", Billing Address = " + billingAddress
-                + ", Delivery Address = " + deliveryAddress
-                + ", Cards = " + cards
-                + ", Role = " + role
-                + '}';
+        return "Person {" + "id='" + id + '\'' + ", First Name = " + firstName + ", Last Name = " + lastName + ", Full Name = " + fullName + ", Email = " + email + ", Phone Number = " + phoneNumber + ", Billing Address = " + billingAddress + ", Delivery Address = " + deliveryAddress + ", Cards = " + cards + ", Role = " + role + '}';
     }
 
+    @Override
+    public void printInfo() {
+        System.out.println(fullName + ", " + email + ", " + ", " + phoneNumber + ", " + billingAddress + ", " + deliveryAddress + ", " + role);
+    }
+
+    public void addUser() {
+        try {
+            FileWriter writer = new FileWriter(FILE_USERS, true);
+            writer.append(this.userData() + "\n");
+            System.out.println("User was successfully added");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printUsers() {
+        try {
+            FileReader fileReader = new FileReader(FILE_USERS);
+            int character;
+            StringBuilder line = new StringBuilder();
+
+            while ((character = fileReader.read()) != -1) {
+                if (character == '\n') {
+                    System.out.println(line.toString());
+                    line = new StringBuilder();
+                } else {
+                    line.append((char)character);
+                }
+            }
+
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String userData() {
+        return "User{" + "first Name='" + firstName + '\'' + ", last Name='" + lastName + '\'' + ", email='" + email + '\'' + '}';
+    }
+
+
 }
+

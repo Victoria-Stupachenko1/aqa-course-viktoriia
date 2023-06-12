@@ -7,15 +7,9 @@ public class Manager extends User {
     private String workPhoneNumber;
 
     // Constructor
-    public Manager(String fullName, String email, String role, String position) {
-        super (fullName, email, role);
+    public Manager(String fullName, String email, Roles.RoleType role, String position) {
+        super(fullName, email, role);
         this.position = position;
-    }
-
-    // Method
-    public void printUserInfo() {
-        super.printUserInfo ( );
-        System.out.println (position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
     }
 
     // Getters & Setters
@@ -49,8 +43,14 @@ public class Manager extends User {
                 + ", Work Phone Number =" + workPhoneNumber + "]";
     }
 
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println(position + ", " + responsibilityDistrict + ", " + workPhoneNumber);
+    }
 
-    //manager is an user that contains additional private fields: position; responsibilityDistrict; workPhoneNumber.
+
+    //manager is a user that contains additional private fields: position; responsibilityDistrict; workPhoneNumber.
     // Manager object can be created, like user object, but additionally must have position value in process of creation.
     // All additional fields must have getters and setters. Also, manager has the same method printUserInfo,
     // like a user, but this method additionally print all additional fields of manager.

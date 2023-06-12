@@ -1,36 +1,47 @@
 package oop;
 
+import static java.lang.String.valueOf;
+
 public class Roles {
     // private fields
     private final boolean viewAll;
     private final boolean editAll;
     private final boolean addAll;
     private final boolean deleteAll;
-    private String role;
+    // 3. Interfaces & Enums Task 1
+    private RoleType role;
+
+
+    public enum RoleType {
+        ADMIN,
+        VIEWER,
+        CUSTOMER,
+        MAIN_CUSTOMER;
+    }
 
     // Constructor
-    public Roles(String role) {
+    public Roles(RoleType role) {
         this.role = role;
         switch (role) {
-            case "Admin" -> {
+            case ADMIN -> {
                 viewAll = true;
                 editAll = true;
                 addAll = true;
                 deleteAll = true;
             }
-            case "Viewer" -> {
+            case VIEWER -> {
                 viewAll = true;
                 editAll = false;
                 addAll = false;
                 deleteAll = false;
             }
-            case "Customer" -> {
+            case CUSTOMER -> {
                 viewAll = true;
                 editAll = false;
                 addAll = true;
                 deleteAll = false;
             }
-            case "Main Customer" -> {
+            case MAIN_CUSTOMER -> {
                 viewAll = true;
                 editAll = true;
                 addAll = true;
@@ -47,11 +58,11 @@ public class Roles {
     }
 
     // Getters & Setters
-    public String getRole() {
+    public RoleType getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(RoleType role) {
         this.role = role;
     }
 
